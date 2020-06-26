@@ -352,7 +352,7 @@ $(document).ready(function() {
 
 	$('#createPOS').click(function(){
 
-		var posName=$('#storeName').val();
+		var posName=$('#posName').val();
 		var externalStoreID=$('#externalStoreIDPOS').val();
 		var externalPOSID=$('#externalPOSID').val();
 
