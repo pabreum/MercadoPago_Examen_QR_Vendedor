@@ -15,8 +15,8 @@ global $access_token;
 
 $external_id = $_REQUEST["external_id"];
 $url="https://api.mercadopago.com/pos";
-$json = "{\"external_id\":\"$external_id\"}";
 
-curl_call("get","$url?access_token=$access_token",$json);
+
+curl_call("get","$url?external_id=$external_id&access_token=$access_token","");
 
 ?>
