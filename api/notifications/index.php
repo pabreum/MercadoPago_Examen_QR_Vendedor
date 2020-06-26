@@ -52,7 +52,9 @@ if($n==2){
 }else{
 	
 	// Si llegase otro tipo de notificación igual responderá http 200 pero no hará nada.
-
+	$fp = fopen('notifications.txt', 'w');
+	fwrite($fp, "No llego");
+	fclose($fp);
 	header("HTTP/1.1 200 OK");
 
 }
