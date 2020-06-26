@@ -1,10 +1,4 @@
 <?php
-$json = file_get_contents('php://input');
-echo("nada de nada".$json);
-$fp = fopen('notifications.txt', 'w');
-fwrite($fp, "Llego2:" . $json);
-fclose($fp);
-
 
 ini_set('display_errors', 0);
 header('Content-type: application/json');
@@ -19,6 +13,7 @@ global $access_token,$collector_id,$notificationJSON;
 // Como no trabajaremos con Base de Datos, ésta es una forma creativa de recibir las notificaciones y guardar la última en un archivo de texto para poder hacer las consultas.
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
+
 
 // Recibe notificación:
 $received_json = str_replace(",}","}",file_get_contents('php://input'));
@@ -47,9 +42,9 @@ if($n==2){
 	// seguramente deberás dar derechos al archivo notifications.txt
 	// Por ejemplo con el comando: "sudo chmod 777 notifications.txt"
 
-	//$fp = fopen('notifications.txt', 'w');
-	//fwrite($fp, $resource);
-	//fclose($fp);
+	$fp = fopen('notifications.txt', 'w');
+	fwrite($fp, $resource);
+	fclose($fp);
 
 	echo $resource;
 
