@@ -369,8 +369,7 @@ $(document).ready(function() {
 					"external_store_id":externalStoreID,
 					"fixed_amount":true,
 					"category":category,
-					"external_id":externalPOSID,
-				    "items":items};
+					"external_id":externalPOSID};
 
 
 
