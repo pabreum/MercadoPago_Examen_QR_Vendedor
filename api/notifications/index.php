@@ -44,9 +44,9 @@ if($n==2){
 	// seguramente deberás dar derechos al archivo notifications.txt
 	// Por ejemplo con el comando: "sudo chmod 777 notifications.txt"
 
-	$fp = fopen('notifications.txt', 'w');
-	fwrite($fp, $resource);
-	fclose($fp);
+	//$fp = fopen('notifications.txt', 'w');
+	//fwrite($fp, $resource);
+	//fclose($fp);
 
 	echo $resource;
 
