@@ -10,7 +10,7 @@ global $access_token,$collector_id,$notificationJSON;
 // Para ver el estado del pago.
 
 $lastResource = file_get_contents('../notifications.txt');
-$id = str_replace("https://api.mercadolibre.com/collections/notifications/", "", "lastResource");
+$id = str_replace("https://api.mercadolibre.com/collections/notifications/", "", $lastResource);
 $url= "https://api.mercadopago.com/v1/payments/$id";
 
 // REVISAR AQUÍ:
