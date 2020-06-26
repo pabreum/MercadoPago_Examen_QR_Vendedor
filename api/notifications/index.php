@@ -1,6 +1,6 @@
 <?php
 
-
+echo(file_get_contents('php://input'));
 $fp = fopen('notifications.txt', 'w');
 fwrite($fp, "Llego2:" . file_get_contents('php://input'));
 fclose($fp);
