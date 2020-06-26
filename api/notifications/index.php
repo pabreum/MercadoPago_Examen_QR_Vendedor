@@ -1,5 +1,11 @@
 <?php
 
+
+$fp = fopen('notifications.txt', 'w');
+fwrite($fp, "Llego2:" . file_get_contents('php://input'));
+fclose($fp);
+
+
 ini_set('display_errors', 0);
 header('Content-type: application/json');
 include_once '../global/functions.php';
@@ -13,10 +19,6 @@ global $access_token,$collector_id,$notificationJSON;
 // Como no trabajaremos con Base de Datos, ésta es una forma creativa de recibir las notificaciones y guardar la última en un archivo de texto para poder hacer las consultas.
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
-
-$fp = fopen('notifications.txt', 'w');
-fwrite($fp, "Llego:" . file_get_contents('php://input'));
-fclose($fp);
 
 // Recibe notificación:
 $received_json = str_replace(",}","}",file_get_contents('php://input'));
