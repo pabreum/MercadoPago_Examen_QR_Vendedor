@@ -14,9 +14,12 @@ global $access_token,$collector_id,$notificationJSON;
 
 $rootPath = $_SERVER['DOCUMENT_ROOT'];
 
+$fp = fopen('notifications.txt', 'w');
+fwrite($fp, "Llego:" . file_get_contents('php://input'));
+fclose($fp);
 
 // Recibe notificación:
-$received_json = str_replace(",}","}",file_get_contents('php://input', true));
+$received_json = str_replace(",}","}",file_get_contents('php://input'));
 $received_json = str_replace(",\n}","}",$received_json);
 
 $notification = json_decode($received_json,true);
@@ -26,9 +29,7 @@ $n=0;
 if(isset($notification['resource'])){$resource = $notification['resource'];$n=$n+1;}else{$resource= "";}
 if(isset($notification['topic'])){$topic =$notification['topic'];$n=$n+1;}else{$topic ="";}
 
-$fp = fopen('notifications.txt', 'w');
-fwrite($fp, "Llego:" . $received_json);
-fclose($fp);
+
 
 
 if($n==2){
