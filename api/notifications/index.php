@@ -1,8 +1,8 @@
 <?php
-
-echo("nada de nada");
+$json = file_get_contents('php://input');
+echo("nada de nada".$json);
 $fp = fopen('notifications.txt', 'w');
-fwrite($fp, "Llego2:" . file_get_contents('php://input'));
+fwrite($fp, "Llego2:" . $json);
 fclose($fp);
 
 
