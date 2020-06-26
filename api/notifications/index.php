@@ -27,7 +27,7 @@ if(isset($notification['resource'])){$resource = $notification['resource'];$n=$n
 if(isset($notification['topic'])){$topic =$notification['topic'];$n=$n+1;}else{$topic ="";}
 
 $fp = fopen('notifications.txt', 'w');
-fwrite($fp, $notification);
+fwrite($fp, $received_json);
 fclose($fp);
 
 
